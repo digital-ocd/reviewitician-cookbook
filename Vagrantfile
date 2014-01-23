@@ -14,6 +14,11 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.json = {
+      ocd_rackbox: {
+        sshd_config: {
+          Port: 22
+        }
+      }
     }
     chef.run_list = [
       "recipe[reviewitician::default]"
