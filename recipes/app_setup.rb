@@ -19,8 +19,10 @@ end
 
 template "#{app_path}/shared/config/database.yml" do
   source "database_yml.erb"
+  owner node['ocd_rackbox']['user']
 end
 
 template "#{app_path}/shared/config/application.yml" do
   source "application_yml.erb"
+  owner node['ocd_rackbox']['user']
 end
