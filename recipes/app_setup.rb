@@ -18,7 +18,7 @@ directory "#{app_path}/shared/config" do
 end
 
 template "#{app_path}/shared/config/database.yml" do
-  source "databse_yml.erb"
+  source "database_yml.erb"
 end
 
 template "#{app_path}/shared/config/application.yml" do
