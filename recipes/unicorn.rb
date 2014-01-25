@@ -13,7 +13,7 @@
 #   run "#{sudo} update-rc.d -f unicorn_#{application} defaults"
 # end
 
-app_path = "#{node['ocd_rackbox']['home_dir']}/apps/#{node['reviewitician']['app_name']}"
+app_path = "#{node['reviewitician']['app_path']}"
 
 template "#{app_path}/shared/config/unicorn.rb" do
   source "unicorn_config.erb"
@@ -23,4 +23,7 @@ end
 
 template "/etc/init.d/unicorn_#{node['reviewitician']['app_name']}" do
   source "unicorn_init.erb"
+  variables :app_path => "#{app_path}"
+  owner node['ocd_rackbox']['user']
+  mode "0755"
 end

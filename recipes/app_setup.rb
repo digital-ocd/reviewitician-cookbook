@@ -3,7 +3,7 @@
 # Recipe:: app_setup
 #
 
-app_path = "#{node['ocd_rackbox']['home_dir']}/apps/#{node['reviewitician']['app_name']}"
+app_path = "#{node['reviewitician']['app_path']}"
 
 directory app_path do
   owner node['ocd_rackbox']['user']
