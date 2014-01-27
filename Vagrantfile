@@ -14,6 +14,12 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.json = {
+      postgresql: {
+        apt_distribution: "precise",
+        version: "9.2",
+        users: [],
+        databases: []
+      },
       ocd_rackbox: {
         sshd_config: {
           Port: 22
