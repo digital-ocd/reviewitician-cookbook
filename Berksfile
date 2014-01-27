@@ -2,5 +2,5 @@ site :opscode
 
 metadata
 
-cookbook 'ocd_postgres', git: 'git@github.com:jrmyward/ocd-postgres.git'
+cookbook 'postgresql', git: 'git@github.com:phlipper/chef-postgresql.git'
 cookbook 'ocd_rackbox', git: 'git@github.com:digital-ocd/ocd-rackbox.git'
